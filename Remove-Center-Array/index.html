@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function del(array, positan) {
+            if (positan < 0 || positan >= array.length || array.length == 0) {
+                console.log(error)
+            }
+
+            var newArray = new Array(array.length - 1)
+
+            for (let i = 0; i < positan; i++) {
+                newArray[i] = array[i]
+                console.log(`New Array Left ${newArray[i]}`)
+            }
+
+            for (let i = positan + 1; i < array.length; i++) {
+                newArray[i - 1] = array[i]
+                console.log(`New Array Right ${newArray[i - 1]}`)
+
+            }
+
+            return newArray
+        }
+
+        var array = [1, 2, 3, 4, 5]
+        var positan = 2;
+
+        var reselt = del(array, positan)
+        console.log(reselt)
+    </script>
+</body>
+
+</html>
